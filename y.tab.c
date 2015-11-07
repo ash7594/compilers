@@ -16,12 +16,16 @@ static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02/21/93";
 
 #define YYPURE 0
 
-#line 2 "yaccstart.y"
+#line 2 "ld.y"
 	#include<stdio.h>
 	#include<stdlib.h>
+	/*#include<bits/stdc++.h>*/
 	extern int yylex();
 	void yyerror(char *);
-#line 8 "yaccstart.y"
+	/*void add(string s);*/
+	int var;
+	/*vector<string> a;*/
+#line 12 "ld.y"
 #ifdef YYSTYPE
 #undef  YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
@@ -29,10 +33,10 @@ static const char yysccsid[] = "@(#)yaccpar	1.9 (Berkeley) 02/21/93";
 #ifndef YYSTYPE_IS_DECLARED
 #define YYSTYPE_IS_DECLARED 1
 typedef union {
-	float f;	
+	float f;
 } YYSTYPE;
 #endif /* !YYSTYPE_IS_DECLARED */
-#line 35 "y.tab.c"
+#line 39 "y.tab.c"
 
 /* compatibility with bison */
 #ifdef YYPARSE_PARAM
@@ -66,42 +70,42 @@ typedef union {
 extern int YYPARSE_DECL();
 
 #define NUM 257
+#define print 258
 #define YYERRCODE 256
 static const short yylhs[] = {                           -1,
-    0,    1,    1,    1,    2,    2,    2,    3,    3,    3,
+    0,    0,    1,    1,    1,    2,    2,    2,    3,    3,
+    3,
 };
 static const short yylen[] = {                            2,
-    1,    3,    3,    1,    3,    3,    1,    3,    2,    1,
+    1,    1,    3,    3,    1,    3,    3,    1,    3,    2,
+    1,
 };
 static const short yydefred[] = {                         0,
-   10,    0,    0,    0,    0,    0,    7,    9,    0,    0,
-    0,    0,    0,    8,    0,    0,    5,    6,
+   11,    2,    0,    0,    0,    0,    0,    8,   10,    0,
+    0,    0,    0,    0,    9,    0,    0,    6,    7,
 };
-static const short yydgoto[] = {                          4,
-    5,    6,    7,
+static const short yydgoto[] = {                          5,
+    6,    7,    8,
 };
 static const short yysindex[] = {                       -40,
-    0,  -40,  -40,    0,  -33,  -39,    0,    0,  -32,  -40,
-  -40,  -40,  -40,    0,  -39,  -39,    0,    0,
+    0,    0,  -38,  -38,    0,  -32,  -39,    0,    0,  -31,
+  -38,  -38,  -38,  -38,    0,  -39,  -39,    0,    0,
 };
 static const short yyrindex[] = {                         0,
-    0,    0,    0,    0,   14,    1,    0,    0,    0,    0,
-    0,    0,    0,    0,    2,    7,    0,    0,
+    0,    0,    0,    0,    0,   15,    1,    0,    0,    0,
+    0,    0,    0,    0,    0,    4,    9,    0,    0,
 };
 static const short yygindex[] = {                         0,
-   12,    8,    4,
+   16,    7,    3,
 };
-#define YYTABLESIZE 217
-static const short yytable[] = {                          3,
-    4,    2,   12,    0,    2,    8,    3,   13,   14,   10,
-   10,   11,   11,    1,    9,   17,   18,   15,   16,    0,
+#define YYTABLESIZE 219
+static const short yytable[] = {                          4,
+    5,    4,   13,    3,    3,    9,    3,   14,    4,   15,
+   11,   11,   12,   12,    1,   18,   19,   16,   17,   10,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    4,    2,    4,    2,    4,    2,    3,    0,    3,
-    0,    3,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    5,    0,    5,    3,    5,    3,    0,    3,    4,
+    0,    4,    0,    4,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
@@ -114,18 +118,18 @@ static const short yytable[] = {                          3,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    1,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
+    0,    0,    0,    0,    0,    0,    1,    2,    1,
 };
 static const short yycheck[] = {                         40,
-    0,    0,   42,   -1,   45,    2,    0,   47,   41,   43,
-   43,   45,   45,    0,    3,   12,   13,   10,   11,   -1,
+    0,   40,   42,    0,   45,    3,   45,   47,    0,   41,
+   43,   43,   45,   45,    0,   13,   14,   11,   12,    4,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   41,   41,   43,   43,   45,   45,   41,   -1,   43,
-   -1,   45,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
+   -1,   41,   -1,   43,   41,   45,   43,   -1,   45,   41,
+   -1,   43,   -1,   45,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
@@ -138,13 +142,16 @@ static const short yycheck[] = {                         40,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
-   -1,   -1,   -1,   -1,   -1,   -1,  257,
+   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
+   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
+   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
+   -1,   -1,   -1,   -1,   -1,   -1,  257,  258,  257,
 };
-#define YYFINAL 4
+#define YYFINAL 5
 #ifndef YYDEBUG
 #define YYDEBUG 0
 #endif
-#define YYMAXTOKEN 257
+#define YYMAXTOKEN 258
 #define YYTRANSLATE(a) ((a) > YYMAXTOKEN ? (YYMAXTOKEN + 1) : (a))
 #if YYDEBUG
 static const char *yyname[] = {
@@ -156,11 +163,12 @@ static const char *yyname[] = {
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"NUM",
-"illegal-symbol",
+"print","illegal-symbol",
 };
 static const char *yyrule[] = {
 "$accept : S",
 "S : E",
+"S : print",
 "E : E '+' T",
 "E : E '-' T",
 "E : T",
@@ -207,16 +215,21 @@ typedef struct {
 } YYSTACKDATA;
 /* variables for the parser stack */
 static YYSTACKDATA yystack;
-#line 35 "yaccstart.y"
+#line 41 "ld.y"
 
 void yyerror(char *msg) {
 	//return 1;
 }
 
+//void add(string s) {
+//	a.push_back(s);
+//}
+
 int main() {
-	return yyparse();
+	yyparse();
+	//printf("yo\n");
 }
-#line 218 "y.tab.c"
+#line 231 "y.tab.c"
 
 #if YYDEBUG
 #include <stdio.h>		/* needed for printf */
@@ -419,46 +432,50 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 18 "yaccstart.y"
-	{ printf("%f\n",yystack.l_mark[0].f); }
+#line 23 "ld.y"
+	{ /*add("S -> E\n");*/ var = 0; }
 break;
 case 2:
-#line 20 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[-2].f + yystack.l_mark[0].f; }
+#line 24 "ld.y"
+	{ /*printf("%s",a[0].c_str);*/ }
 break;
 case 3:
-#line 21 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[-2].f - yystack.l_mark[0].f; }
+#line 26 "ld.y"
+	{ /*a.push_back("E -> E + T\n");*/ }
 break;
 case 4:
-#line 22 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[0].f; }
+#line 27 "ld.y"
+	{ /*a.push_back("E -> E - T\n");*/ }
 break;
 case 5:
-#line 24 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[-2].f * yystack.l_mark[0].f; }
+#line 28 "ld.y"
+	{ /*a.push_back("E -> T\n");*/ }
 break;
 case 6:
-#line 25 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[-2].f / yystack.l_mark[0].f; }
+#line 30 "ld.y"
+	{ /*a.push_back("T -> T * F\n");*/ }
 break;
 case 7:
-#line 26 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[0].f; }
+#line 31 "ld.y"
+	{ /*a.push_back("T -> T / F\n");*/ }
 break;
 case 8:
-#line 29 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[-1].f; }
+#line 32 "ld.y"
+	{ /*a.push_back("T -> F\n");*/ }
 break;
 case 9:
-#line 30 "yaccstart.y"
-	{ yyval.f = -yystack.l_mark[0].f; }
+#line 35 "ld.y"
+	{ /*a.push_back("F -> (E)\n");*/ }
 break;
 case 10:
-#line 31 "yaccstart.y"
-	{ yyval.f = yystack.l_mark[0].f; }
+#line 36 "ld.y"
+	{ /*a.push_back("F -> -F\n");*/ }
 break;
-#line 460 "y.tab.c"
+case 11:
+#line 37 "ld.y"
+	{ /*a.push_back("F -> id\n");*/ }
+break;
+#line 477 "y.tab.c"
     }
     yystack.s_mark -= yym;
     yystate = *yystack.s_mark;

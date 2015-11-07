@@ -8,6 +8,7 @@
 
 %%
 
+"print" { return print; }
 [0-9]+(\.[0-9]+)? { yylval.f = atof(yytext); return NUM; }
 [+-/*()] { return yytext[0]; }
 [ \n\t] {}
