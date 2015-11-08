@@ -1,6 +1,5 @@
 %{
 	#include<stdio.h>
-	#include<stdlib.h>
 	//#include<bits/stdc++.h>
 	extern int yylex();
 	void yyerror(char *);
